@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+header {
+  width: 100%;
+  display: block;
+  float: left;
+  h1 {
+    float: left;
+    width: 50%;
+  }
+  img {
+    float: right;
+  }
+}
+
 form {
   margin: 50px auto;
   display: block;
