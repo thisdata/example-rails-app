@@ -1,3 +1,4 @@
+require 'this_data'
 ThisData.setup do |config|
   config.api_key = ENV["THISDATA_API_KEY"]
 

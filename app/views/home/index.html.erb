@@ -5,18 +5,31 @@
 
 <%= form_tag("/track", method: "post") do %>
   <div class="field">
-    <%= label_tag(:email, "Email:") %>
-    <%= text_field_tag(:email) %>
+    <%= label_tag(:user_email, "Email*") %>
+    <%= text_field_tag('user[email]', '', required: true) %>
   </div>
   <div class="field">
-    <%= label_tag(:password, "Password:") %>
-    <%= password_field_tag(:password, "notapassword", disabled: true) %>
+    <%= label_tag(:user_name, "Name") %>
+    <%= text_field_tag('user[name]', '') %>
+  </div>
+  <div class="field">
+    <%= label_tag(:user_email, "Mobile") %>
+    <%= text_field_tag('user[email]', '', required: true) %>
+  </div>
+  <div class="field disabled">
+    <%= label_tag(:ip, "IP Address") %>
+    <%= text_field_tag('ip', request.remote_ip, disabled: true) %>
+  </div>
+  <div class="field disabled">
+    <%= label_tag(:user_agent, "User Agent") %>
+    <%= text_field_tag('user_agent', request.user_agent, disabled: true) %>
   </div>
   <div class="field">
     <%= label_tag %>
     <%= submit_tag("Log In") %>
   </div>
 <% end %>
+
 
 <h3>What is this?</h3>
 <p>
