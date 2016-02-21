@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# ThisData's ruby gem for the Login Intelligence API.
+gem 'thisdata', git: "git@github.com:thisdata/thisdata-ruby.git"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
