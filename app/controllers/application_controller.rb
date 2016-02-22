@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # Adds thisdata_track as an instance method. It can hook in to requests
+  # and track events
   include ThisData::TrackRequest
 
   # Prevent CSRF attacks by raising an exception.
