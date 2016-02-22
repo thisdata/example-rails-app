@@ -69,6 +69,16 @@
   </thead>
   <tbody>
     <tr>
+      <td>
+        <em>
+          Your User Agent
+        </em>
+      </td>
+      <td class="value">
+        <%= request.user_agent %>
+      </td>
+    </tr>
+    <tr>
       <td>Chrome on OSX</td>
       <td class="value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36</td>
     </tr>
@@ -100,6 +110,16 @@
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>
+        <em>
+          Your IP
+        </em>
+      </td>
+      <td class="value">
+        <%= request.remote_ip %>
+      </td>
+    </tr>
     <tr>
       <td>North Virginia, USA</td>
       <td class="value">23.23.255.255</td>
