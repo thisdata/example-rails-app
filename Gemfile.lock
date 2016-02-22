@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:thisdata/thisdata-ruby.git
-  revision: 8647252c70b6b6d59f81d3620fcf1390bbf50217
+  revision: cb14a9912ee84c5641afd61096a3bb44758c7080
   specs:
     thisdata (0.1.0)
       httparty (~> 0.13)
