@@ -22,7 +22,7 @@
   </div>
   <div class="field">
     <%= label_tag %>
-    <%= submit_tag("Log In") %>
+    <%= button_tag("Log In") %>
   </div>
 <% end %>
 
@@ -31,24 +31,19 @@
 <p>
   This demo shows the capabilities of the
   <%= link_to "ThisData Login Intelligence Platform", "https://thisdata.com" %>.
-  It lets you pretend to log in to "Demo Co". If you make them suspicious,
+  It lets you pretend to log in to "Demo Co". If you make the events suspicious,
   it'll trigger an alert in the ThisData demo account.
 </p>
-<ul>
-  <li>
-    Enter an email address. This will also be the user's id.
-  </li>
-  <li>
-    Use the same email address with different IP address to simulate an account
-    being logged in to from multiple locations.
-  </li>
-  <li>
-    Check your email to see the "Was This You?" notification.
-  </li>
-  <li>
-    Look at Slack to see the alert and user responses being posted.
-  </li>
-  <li>
-    Look at the ThisData dashboard to see the events.
-  </li>
-</ul>
+<p>
+  <%= link_to "Get in touch", "https://thisdata.com/contact" %> for a walk through
+  this demo.
+</p>
+<p>
+  In this simple case, your own IP and User Agent will be used.
+  <%= link_to "Advanced mode ", advanced_path %> gives you control over more of
+  the metadata we track.
+</p>
+<p>
+  Check out the source code for this Ruby on Rails app at
+  <%= link_to "https://github.com/thisdata/example-rails-app" %>
+</p>

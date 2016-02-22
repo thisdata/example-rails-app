@@ -10,12 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
-$blue: #00d1fb;
-$red: red;
+@import "variables";
+@import "home";
 
 html {
   font-family: sans-serif;
