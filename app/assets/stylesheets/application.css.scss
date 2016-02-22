@@ -14,8 +14,30 @@
  *= require_self
  */
 
+$blue: #00d1fb;
+$red: red;
+
 html {
   font-family: sans-serif;
   font-size: 14px;
-  margin: 25px 50px;
+}
+.container{
+  max-width: 960px;
+  margin: 25px auto;
+}
+
+.banner {
+  margin: 20px 0;
+  font-size: 16px;
+  .notice, .error{
+    padding: 5px;
+  }
+  .notice {
+    background-color: lighten($blue, 40%);
+    border: 2px solid $blue;
+  }
+  .error {
+    background-color: lighten($red, 40%);
+    border: 2px solid $red;
+  }
 }

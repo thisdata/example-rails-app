@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
     return nil unless session["user"] && session["user"]["email"].present?
 
     User.new(
-              # Use the email address as the ID of this fake user
-      id:     Digest::SHA256.hexdigest(session["user"]["email"]),
       email:  session["user"]["email"],
       name:   session["user"]["name"],
       mobile: session["user"]["mobile"]

@@ -3,10 +3,14 @@
   <%= image_tag "/democo_logo.png" %>
 </header>
 
+<p>
+  <%= link_to "Switch to Advanced", advanced_path %>.
+</p>
+
 <%= form_tag("/track", method: "post") do %>
   <div class="field">
     <%= label_tag(:user_email, "Email*") %>
-    <%= text_field_tag('user[email]', '', required: true) %>
+    <%= text_field_tag('user[email]', '', required: true, autofocus: true) %>
   </div>
   <div class="field">
     <%= label_tag(:user_name, "Name") %>
@@ -15,14 +19,6 @@
   <div class="field">
     <%= label_tag(:user_mobile, "Mobile") %>
     <%= text_field_tag('user[mobile]', '') %>
-  </div>
-  <div class="field disabled">
-    <%= label_tag(:ip, "IP Address") %>
-    <%= text_field_tag('ip', request.remote_ip, disabled: true) %>
-  </div>
-  <div class="field disabled">
-    <%= label_tag(:user_agent, "User Agent") %>
-    <%= text_field_tag('user_agent', request.user_agent, disabled: true) %>
   </div>
   <div class="field">
     <%= label_tag %>

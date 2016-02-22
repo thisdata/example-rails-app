@@ -1,0 +1,120 @@
+<header>
+  <h1>ThisData API Demo</h1>
+  <%= image_tag "/democo_logo.png" %>
+</header>
+
+<p>
+  <%= link_to "Switch to Simple", root_path %>
+</p>
+
+<%= form_tag("/advanced_track", method: "post") do %>
+  <div class="field">
+    <%= label_tag(:event_ip, "IP Address*") %>
+    <%= text_field_tag('event[ip]', @event.ip, required: true, autofocus: true) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:user_agent, "User Agent") %>
+    <%= text_area_tag('event[user_agent]', @event.user_agent, cols: 5) %>
+  </div>
+  <div class="field">
+    <h3>User</h3>
+  </div>
+  <div class="field">
+    <%= label_tag(:event_user_email, "ID*") %>
+    <%= text_field_tag('event[user][id]', @event.user.id) %>
+    <p class="hint">
+      <small>
+        Leave blank to use the MD5 digest of the email address.
+      </small>
+    </p>
+  </div>
+  <div class="field">
+    <%= label_tag(:event_user_email, "Email*") %>
+    <%= text_field_tag('event[user][email]', @event.user.email, required: true) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:event_user_name, "Name") %>
+    <%= text_field_tag('event[user][name]', @event.user.name) %>
+  </div>
+  <div class="field">
+    <%= label_tag(:event_user_mobile, "Mobile") %>
+    <%= text_field_tag('event[user][mobile]', @event.user.mobile) %>
+    <p class="hint">
+      <small>
+        Must use <%= link_to "E.164 number formatting", "https://www.twilio.com/help/faq/phone-numbers/how-do-i-format-phone-numbers-to-work-internationally", target: "_blank" %>.
+      </small>
+    </p>
+  </div>
+  <div class="field">
+    <%= label_tag %>
+    <%= submit_tag("Log In") %>
+  </div>
+  <p class="hint">
+    <small>
+      <a href="#" id="clear-fields">Clear Fields</a>
+    </small>
+  </p>
+<% end %>
+
+
+<h3>
+  User Agents
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Device</th>
+      <th>User Agent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chrome on OSX</td>
+      <td class="value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36</td>
+    </tr>
+    <tr>
+      <td>
+        IE 10 on Windows 8
+      </td>
+      <td class="value">
+        Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0; Touch; MALNJS)
+      </td>
+    </tr>
+    <tr>
+      <td>Safari on iPad</td>
+      <td class="value">
+        Mozilla/5.0 (iPad; CPU OS 9_2_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13D15 Safari/601.1
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>
+  IP Addresses
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>IP Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>North Virginia, USA</td>
+      <td class="value">23.23.255.255</td>
+    </tr>
+    <tr>
+      <td>North Carolina, USA</td>
+      <td class="value">50.18.56.1</td>
+    </tr>
+    <tr>
+      <td>Ireland</td>
+      <td class="value">46.137.191.254</td>
+    </tr>
+    <tr>
+      <td>Sydney</td>
+      <td class="value">52.65.63.252</td>
+    </tr>
+  </tbody>
+</table>

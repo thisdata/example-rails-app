@@ -8,8 +8,15 @@ class User
     args.each { |key, value| send "#{key}=", value }
   end
 
-  def name
-    @name || self.email
+  def display_name
+    name || email
+  end
+
+  def as_json(**args)
+    json = super(args)
+    # Use the email address as the ID of this fake user
+    json[:id] ||= Digest::MD5.hexdigest(email)
+    json
   end
 
 end

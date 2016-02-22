@@ -13,5 +13,5 @@ ThisData.setup do |config|
   # config.user_mobile_method = :mobile
 
   # Define a Logger instance if you want to debug / track errors
-  # config.logger = Rails.logger unless Rails.env.production?
+  config.logger = Rails.logger unless Rails.env.production?
 end

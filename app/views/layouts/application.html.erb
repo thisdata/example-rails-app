@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Apitester</title>
+  <title>ThisData API Demo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<section class="banner">
-  <% if flash[:notice] %>
-    <div class="notice">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-  <% if flash[:error] %>
-    <div class="warning">
-      <%= flash[:error] %>
-    </div>
-  <% end %>
-</section>
+<div class="container">
+  <section class="banner">
+    <% if flash[:notice] %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:error] %>
+      <div class="error">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+  </section>
 
-<%= yield %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
