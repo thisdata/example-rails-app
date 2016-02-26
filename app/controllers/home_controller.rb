@@ -26,7 +26,7 @@ class HomeController < ApplicationController
 
     # Persist the event to the session, so we can repopulate the fields
     session[:event] = event.as_json
-    redirect_to advanced_path, notice: "Tracked #{saved_event.user.display_name}"
+    redirect_to advanced_path, notice: "Tracked #{saved_event.user.display_name} #{event.verb}"
   end
 
   private
@@ -37,6 +37,7 @@ class HomeController < ApplicationController
 
     def event_params
       params.require(:event).permit(
+        :verb,
         :ip,
         :user_agent,
         user: [
