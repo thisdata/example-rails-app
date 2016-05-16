@@ -8,7 +8,7 @@
 
 .c-demo-sidebar {
   flex: none;
-  width: 340px;
+  width: 370px;
   background-color: #423B54;
   &__step {
     margin-bottom: 2px;

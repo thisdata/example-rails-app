@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
       session["user"]["balance"] = 0
     else
       flash[:error] = [
-        "Sorry! This transfer has been blocked, pending review.",
+        "Sorry! This transfer has been blocked. User identity cannot be authenticated.",
         *score.triggers
       ]
       redirect_to account_path
