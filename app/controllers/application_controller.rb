@@ -22,4 +22,14 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_ip
+    session["current_ip"] || request.remote_ip
+  end
+  helper_method :current_ip
+
+  def current_user_agent
+    session["current_user_agent"] || request.user_agent
+  end
+  helper_method :current_user_agent
+
 end
