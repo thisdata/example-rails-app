@@ -2,7 +2,7 @@
 # might.
 class User
 
-  attr_accessor :id, :name, :email, :mobile
+  attr_accessor :id, :name, :email, :mobile, :balance
 
   def initialize(**args)
     args.each { |key, value| send "#{key}=", value }

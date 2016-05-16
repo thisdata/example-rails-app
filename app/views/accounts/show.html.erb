@@ -2,6 +2,13 @@
 <p>Hello <%= current_user.name %></p>
 <p>Find me in app/views/accounts/show.html.erb</p>
 
+<p>
+  Bank balance: <%= number_to_currency current_user.balance %>
+</p>
+<p>
+  <%= link_to "Transfer all my money to 11223344-55667788-00", accounts_transfer_path, method: :post %>
+</p>
+
 
 <p>
   <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""} %>

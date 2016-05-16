@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   def track
     # "Log the user in" (a.k.a. save the user details to the session)
     session["user"] = user_params
+    session["user"]["balance"] = 10_000
 
     # The magic!
     thisdata_track
