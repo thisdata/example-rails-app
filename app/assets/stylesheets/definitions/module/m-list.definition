@@ -1,0 +1,95 @@
+// List Module
+// ============================================================
+
+@m-list-color-header: #9E9E9E;
+@m-list-tight-spacing: @vr-1;
+@m-list-narrow-spacing: @vr0;
+@m-list-wide-spacing: @vr1;
+
+
+.m-list {
+  line-height: 1;
+}
+.m-list__header {
+  display: block;
+  margin-bottom: @vr-1;
+}
+.m-list__item {
+  display: block;
+  min-height: 1em;
+}
+
+
+// Direction
+// ------------------------------
+
+.m-list.-inline {
+  & > .m-list__item {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  &.-tight,&.-narrow,&.-wide {
+    & > .m-list__item {
+      margin-bottom: 0;
+    }
+  }
+}
+.m-list.-inline.-tight {
+  & > .m-list__item {
+    margin-right: @m-list-tight-spacing;
+  }
+  .m-list__item:last-child {
+    margin-right: 0;
+  }
+}
+.m-list.-inline.-narrow {
+  & > .m-list__item {
+    margin-right: @m-list-narrow-spacing;
+  }
+  .m-list__item:last-child {
+    margin-right: 0;
+  }
+}
+.m-list.-inline.-wide {
+  & > .m-list__item {
+    margin-right: @m-list-wide-spacing;
+  }
+  .m-list__item:last-child {
+    margin-right: 0;
+  }
+}
+
+
+// Spacing
+// ------------------------------
+
+.m-list.-tight {
+  & > .m-list__header {
+    margin-bottom: @m-list-tight-spacing+@vr-1;
+  }
+  & > .m-list__item {
+    margin-bottom: @m-list-tight-spacing;
+  }
+}
+.m-list.-narrow {
+  & > .m-list__header {
+    margin-bottom: @m-list-narrow-spacing+@vr-1;
+  }
+  & > .m-list__item {
+    margin-bottom: @m-list-narrow-spacing;
+  }
+}
+.m-list.-wide {
+  & > .m-list__header {
+    margin-bottom: @m-list-wide-spacing+@vr-1;
+  }
+  & > .m-list__item {
+    margin-bottom: @m-list-wide-spacing;
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/module/m-list.overrides";

@@ -1,0 +1,76 @@
+// Media Module
+// ============================================================
+
+@m-media-tight: @vr-1;
+@m-media-narrow: @vr0;
+@m-media-wide: @vr1;
+
+
+.m-media {
+
+  display: table;
+  clear: both;
+  width: auto; // sets width on an individual as needed basis
+  margin: 0;
+  list-style: none;
+
+  &.-fluid {
+    width: 100%;
+  }
+  &.-centered {
+    margin: auto;
+  }
+  &.-middle > * {
+    vertical-align: middle;
+  }
+}
+
+.m-media__fig, .m-media__body {
+  display: table-cell;
+  list-style: none;
+  vertical-align: middle;
+  &.-top {
+    vertical-align: top;
+  }
+  &.-bottom {
+    vertical-align: bottom;
+  }
+}
+
+.m-media__fig {
+  &> img {
+    display: block;
+    max-width: none;
+  }
+  &.-tight {
+    padding-right: @m-media-tight;
+  }
+  &.-narrow {
+    padding-right: @m-media-narrow;
+  }
+  &.-wide {
+    padding-right: @m-media-wide;
+  }
+  &.-reverse {
+    padding-right: 0;
+    text-align: right;
+    & > * {
+      float: right;
+    }
+    &.-tight {
+      padding-left: @m-media-tight;
+    }
+    &.-narrow {
+      padding-left: @m-media-narrow;
+    }
+    &.-wide {
+      padding-left: @m-media-wide;
+    }
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/module/m-media.overrides";

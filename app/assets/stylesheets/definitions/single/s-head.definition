@@ -1,0 +1,77 @@
+// Head Single
+// ============================================================
+
+// Weight Variables
+@s-head-light: @light;
+@s-head-regular: @regular;
+@s-head-semi-bold: @semi-bold;
+@s-head-bold: @bold;
+
+// Define
+// ------------------------------
+
+.s-head {
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+
+  // Weight Variation
+  // ------------------------------
+
+  &.-light {
+    font-weight: @s-head-light;
+  }
+  &.-regular {
+    font-weight: @s-head-regular;
+  }
+  &.-semi-bold {
+    font-weight: @s-head-semi-bold;
+  }
+  &.-bold {
+    font-weight: @s-head-bold;
+  }
+  &.-uppr {
+    text-transform: uppercase;
+  }
+
+
+  // Reset Variation
+  // ------------------------------
+
+  &.-raw {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: normal;
+  }
+
+
+  // Spacing Variations
+  // ------------------------------
+
+  &.-tight {
+    margin-top: 0;
+    margin-bottom: @vr-1;
+    line-height: normal;
+  }
+  &.-narrow {
+    margin-top: 0;
+    margin-bottom: @vr0;
+    line-height: normal;
+  }
+  &.-wide {
+    margin-top: 0;
+    margin-bottom: @vr1;
+    line-height: normal;
+  }
+  &.-relaxed {
+    line-height: 1.5;
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/single/s-head.overrides";

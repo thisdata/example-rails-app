@@ -5,8 +5,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.14.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+# Use LESS for stylesheets
+gem 'therubyracer',  platforms: :ruby
+gem 'libv8', '3.16.14.7'
+gem 'less-rails', '~> 2.7.0', github: 'thisdata/less-rails', branch: 'depends_only_on_less_files'
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

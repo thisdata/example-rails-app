@@ -1,0 +1,47 @@
+// Color Utility
+// ============================================================
+
+@u-color-brand: @brand-color;
+@u-color-red: @red;
+@u-color-orange: @orange;
+@u-color-yellow: @yellow;
+@u-color-green: @green;
+@u-color-blue: @blue;
+@u-color-purple: @purple;
+@u-color-black: @black;
+@u-color-white: white;
+
+
+.u-color-brand {
+  color: @u-color-brand !important;
+}
+.u-color-red {
+  color: @u-color-red !important;
+}
+.u-color-orange {
+  color: @u-color-orange !important;
+}
+.u-color-yellow {
+  color: @u-color-yellow !important;
+}
+.u-color-green {
+  color: @u-color-green !important;
+}
+.u-color-blue {
+  color: @u-color-blue !important;
+}
+.u-color-purple {
+  color: @u-color-purple !important;
+}
+.u-color-black {
+  color: @u-color-black !important;
+}
+.u-color-white {
+  color: @u-color-white !important;
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/utility/u-color.overrides";
