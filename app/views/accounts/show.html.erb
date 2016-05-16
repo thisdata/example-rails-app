@@ -1,0 +1,8 @@
+<h1>Accounts#show</h1>
+<p>Hello <%= current_user.name %></p>
+<p>Find me in app/views/accounts/show.html.erb</p>
+
+
+<p>
+  <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""} %>
+</p>

@@ -10,8 +10,7 @@ class HomeController < ApplicationController
     # The magic!
     thisdata_track
 
-    redirect_to root_path, notice: "Tracked #{current_user.display_name}"
-    session["user"] = nil
+    redirect_to account_path, notice: "Welcome #{current_user.display_name}!"
   end
 
   def advanced
@@ -27,6 +26,11 @@ class HomeController < ApplicationController
     # Persist the event to the session, so we can repopulate the fields
     session[:event] = event.as_json
     redirect_to advanced_path, notice: "Tracked #{saved_event.user.display_name} #{event.verb}"
+  end
+
+  def logout
+    session["user"] = nil
+    redirect_to root_path, notice: "Good bye. Come back soon!"
   end
 
   private
