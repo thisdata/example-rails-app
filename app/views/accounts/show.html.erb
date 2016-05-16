@@ -1,15 +1,61 @@
-<h1>Accounts#show</h1>
-<p>Hello <%= current_user.name %></p>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<section class="c-demo -account">
+  <aside class="c-demo-sidebar">
+    <article class="c-demo-sidebar__header">
+      <ul class="m-media -middle -fluid">
+        <li class="m-media__fig"><%= image_tag "thisdata-white.png", class: "c-demo-sidebar__logo" %></li>
+        <li class="m-media__body"><h6 class="s-head -raw -semibold">PRODUCT DEMO</h6></li>
+      </ul>
+    </article>
+    <article class="c-demo-sidebar__step">
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">1. Login to Ablemoney</h6>
+      <p>Log in using any email address and password. Don’t worry the password can be literally anything.</p>
+    </article>
+    <article class="c-demo-sidebar__step">
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">2. Login to Ablemoney</h6>
+      <p>Log in using any email address and password. Don’t worry the password can be literally anything.</p>
+    </article>
+    <article class="c-demo-sidebar__step">
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">3. Login to Ablemoney</h6>
+      <p>Log in using any email address and password. Don’t worry the password can be literally anything.</p>
+    </article>
+    <article class="c-demo-sidebar__step">
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">4. Login to Ablemoney</h6>
+      <p>Log in using any email address and password. Don’t worry the password can be literally anything.</p>
+    </article>
+  </aside>
+  <div class="c-demo-frame -account">
+    <header class="c-demo-header">
+      <%= image_tag "logo-white.png", class: "c-demo-header__logo" %>
+      <span class="c-demo-header__balance">
+        <b>Current balance:</b> <%= number_to_currency current_user.balance %>
+      </span>
+      <%= link_to "Sign Out", logout_path, method: :delete, data: {no_turbolink: ""}, class: "c-demo-header__sign-out" %>
+    </header>
 
-<p>
-  Bank balance: <%= number_to_currency current_user.balance %>
-</p>
-<p>
-  <%= link_to "Transfer all my money to 11223344-55667788-00", accounts_transfer_path, method: :post %>
-</p>
+    <% if flash[:notice] %>
+      <div class="notice">
+        <h4 class="s-head -light -raw"><%= flash[:notice] %></h4>
+      </div>
+    <% end %>
+    <% if flash[:error] %>
+      <div class="error">
+        <h4 class="s-head -light -raw"><%= flash[:error] %></h4>
+      </div>
+    <% end %>
+
+    <div class="c-demo-content">
+      <h2 class="s-head -light -wide">How much would you like to transfer?</h2>
+      <article class="c-demo-form">
+        <h4 class="s-head -light -tight"><b>Payee:</b> John Titor</h4>
+        <h5 class="s-head -light -narrow">06-0821-0373779-00</h5>
+        <span class="c-demo-form__fake-input">
+          $10,000
+        </span>
+        <%= link_to "Transfer Funds", accounts_transfer_path, method: :post, class: "s-button -fluid -green" %>
+      </article>
+    </div>
 
 
-<p>
-  <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""} %>
-</p>
+  </div>
+</section>
+
