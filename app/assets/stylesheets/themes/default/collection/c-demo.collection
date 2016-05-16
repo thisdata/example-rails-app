@@ -119,11 +119,13 @@
 .notice, .error {
   display: flex;
   width: 100%;
-  height: 40px;
+  min-height: 40px;
+  padding: 5px 20px;
   justify-content: center;
   align-items: center;
   background:  #F0F4F7;
   color: white;
+  text-align: center;
 }
 .notice {
   background-color: #3DFA89;

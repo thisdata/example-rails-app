@@ -23,17 +23,28 @@
     <div class="c-demo-content">
       <%= image_tag "logo.png", class: "c-demo-content__logo" %>
       <article class="c-demo-form">
-        <h2 class="s-head -light -narrow">Sign In</h2>
+        <h2 class="s-head -light -narrow">Log In</h2>
         <%= form_tag("/track", method: "post") do %>
           <div class="c-demo-form__field">
-            <%= text_field_tag('user[email]', '', required: true, autofocus: true, placeholder: "name@company.com") %>
+            <%= text_field_tag('event[user][email]', '', required: true, autofocus: true, placeholder: "name@company.com") %>
           </div>
           <div class="c-demo-form__field">
-            <%= text_field_tag('user[password]', '', placeholder: "password", type: "password") %>
+            <%= text_field_tag('event[user][password]', '', placeholder: "password", type: "password") %>
           </div>
+
+          <div class="l-box -row">
+            <%= select_tag('event[ip]',
+              options_for_select([
+                ["Pretend to be from New Zealand",              "130.216.39.241"],
+                ["Pretend to be using Tor from Libera",         "197.231.221.211"]
+              ]),
+              required: true, autofocus: true, placeholder: "Email",
+              class: "js-nice-select nice-select"
+            ) %>
+          </div>
+
           <div class="c-demo-form__field u-pad-top-smaller">
-            <%= label_tag %>
-            <%= button_tag("Sign In", class: "s-button -green -fluid -sharp") %>
+            <%= button_tag("Log In", class: "s-button -green -fluid -sharp") %>
           </div>
         <% end %>
       </article>

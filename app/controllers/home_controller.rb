@@ -9,14 +9,14 @@ class HomeController < ApplicationController
     session["user"]["balance"] = 10_000
 
     # Allow overriding of ip and user_agent
-    session["ip"] = event_params["ip"] || request.remote_ip
-    session["user_agent"] = event_params["user_agent"] || request.user_agent
+    session["current_ip"]         = event_params["ip"]          || request.remote_ip
+    session["current_user_agent"] = event_params["user_agent"]  || request.user_agent
 
     # Track the event
-    track_login(
+    ThisData.track_login(
       ip: current_ip,
       user_agent: current_user_agent,
-      user: current_user.to_json
+      user: current_user.as_json
     )
 
     redirect_to account_path, notice: "Welcome #{current_user.display_name}!"

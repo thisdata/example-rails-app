@@ -21,7 +21,7 @@
       <span class="c-demo-header__balance">
         <b>Current balance:</b> <%= number_to_currency current_user.balance %>
       </span>
-      <%= link_to "Sign Out", logout_path, method: :delete, data: {no_turbolink: ""}, class: "c-demo-header__sign-out" %>
+      <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""}, class: "c-demo-header__sign-out" %>
     </header>
 
     <% if flash[:notice] %>
@@ -41,7 +41,7 @@
         <h4 class="s-head -light -tight"><b>Payee:</b> John Titor</h4>
         <h5 class="s-head -light -narrow">06-0821-0373779-00</h5>
         <span class="c-demo-form__fake-input">
-          $10,000
+          <%= number_to_currency current_user.balance %>
         </span>
         <%= link_to "Transfer Funds", accounts_transfer_path, method: :post, class: "s-button -fluid -green" %>
       </article>

@@ -30,7 +30,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # ThisData's ruby gem for the Login Intelligence API.
-gem 'thisdata', '~> 0.1.1', branch: 'verify-api'
+gem 'thisdata', '~> 0.1.1', git: "git://github.com/thisdata/thisdata-ruby.git", branch: 'verify-api'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

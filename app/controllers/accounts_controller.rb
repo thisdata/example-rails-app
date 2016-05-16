@@ -6,11 +6,11 @@ class AccountsController < ApplicationController
 
   def transfer
     score = get_verify_score
-    if ThisData::Score::RISK_SCORE_GREEN.eql? score.risk_level
+    if score && ThisData::Score::RISK_LEVEL_GREEN.eql?(score.risk_level)
       redirect_to account_path, notice: "Your transfer was successful!"
       session["user"]["balance"] = 0
     else
-      redirect_to account_path, error: "Sorry! This transfer has been blocked, pending review."
+      redirect_to account_path, error: "Sorry! This transfer has been blocked, because #{score.triggers.to_sentence}."
     end
   end
 
@@ -23,12 +23,13 @@ class AccountsController < ApplicationController
 
     # Uses ThisData's gem to get a risk score for this action
     def get_verify_score
-      ThisData.verify({
+      payload = {
         ip:         current_ip,
         user_agent: current_user_agent,
         user: {
           id: current_user.id
         }
-      })
+      }
+      ThisData.verify(payload)
     end
 end
