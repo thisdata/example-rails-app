@@ -6,11 +6,16 @@ class AccountsController < ApplicationController
 
   def transfer
     score = get_verify_score
+    Rails.logger.info(score.to_json)
     if score && ThisData::Score::RISK_LEVEL_GREEN.eql?(score.risk_level)
       redirect_to account_path, notice: "Your transfer was successful!"
       session["user"]["balance"] = 0
     else
-      redirect_to account_path, error: "Sorry! This transfer has been blocked, because #{score.triggers.to_sentence}."
+      flash[:error] = [
+        "Sorry! This transfer has been blocked, pending review.",
+        *score.triggers
+      ]
+      redirect_to account_path
     end
   end
 

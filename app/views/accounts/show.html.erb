@@ -30,9 +30,12 @@
       </div>
     <% end %>
     <% if flash[:error] %>
-      <div class="error">
-        <h4 class="s-head -light -raw"><%= flash[:error] %></h4>
-      </div>
+      <% flash[:error] = [flash[:error]] unless flash[:error].is_a?(Array) %>
+      <% flash[:error].each do |message| %>
+        <div class="error">
+          <h4 class="s-head -light -raw"><%= message %></h4>
+        </div>
+      <% end %>
     <% end %>
 
     <div class="c-demo-content">

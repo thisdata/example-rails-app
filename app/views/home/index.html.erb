@@ -26,7 +26,7 @@
         <h2 class="s-head -light -narrow">Log In</h2>
         <%= form_tag("/track", method: "post") do %>
           <div class="c-demo-form__field">
-            <%= text_field_tag('event[user][email]', '', required: true, autofocus: true, placeholder: "name@company.com") %>
+            <%= text_field_tag('event[user][email]', '', required: true, autofocus: true, type: "email", placeholder: "name@company.com") %>
           </div>
           <div class="c-demo-form__field">
             <%= text_field_tag('event[user][password]', '', placeholder: "password", type: "password") %>
@@ -35,8 +35,9 @@
           <div class="l-box -row">
             <%= select_tag('event[ip]',
               options_for_select([
-                ["Pretend to be from New Zealand",              "130.216.39.241"],
-                ["Pretend to be using Tor from Libera",         "197.231.221.211"]
+                ["Pretend to be from New Zealand",  "130.216.39.241"],
+                ["Pretend to be from Australia",    "128.250.51.47"],
+                ["Pretend to be using Tor",         "197.231.221.211"]
               ]),
               required: true, autofocus: true, placeholder: "Email",
               class: "js-nice-select nice-select"
