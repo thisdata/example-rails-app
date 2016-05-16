@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require nice-select
+
+$(document).ready(function() {
+  $('select').niceSelect();
+});
