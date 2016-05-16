@@ -1,0 +1,102 @@
+// Table Module
+// ============================================================
+
+// General
+@m-table-line-color: #e9e9e9;
+@m-table-border: 1px solid rgba(34,36,38,.15);
+@m-table-radius: @vr-1;
+
+// Cell
+@m-table-cell-border: 1px solid rgba(34,36,38,.15);
+
+// Header
+@m-table-header-padding: @vr-1 @vr0;
+@m-table-header-weight: @semi-bold;
+@m-table-header-background: #f9f9f9;
+
+// Body
+@m-table-body-padding: @vr-1 @vr0;
+@m-table-body-weight: @regular;
+@m-table-body-background: #f9f9f9;
+
+
+.m-table {
+
+  display: table;
+  border-collapse: separate;
+  text-align: left;
+  border: @m-table-border;
+  box-shadow: none;
+  border-radius: @m-table-radius;
+
+  &.-fluid {
+    width: 100%;
+  }
+}
+
+
+// Child
+// ------------------------------
+
+.m-table__row, tr {
+  display: table-row;
+}
+.m-table__cell, td, th {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+// Groups
+// ------------------------------
+
+.m-table__header, thead {
+  display: table-header-group;
+  .m-table__row, tr {
+    font-weight: @m-table-header-weight;
+    background: @m-table-header-background;
+  }
+  .m-table__cell, th {
+    padding: @m-table-header-padding;
+    vertical-align: middle;
+    text-align: inherit;
+    font-weight: inherit;
+    border-bottom: @m-table-cell-border;
+    border-right: @m-table-cell-border;
+    &:first-child {
+      border-radius: @m-table-radius 0 0;
+    }
+    &:last-child {
+      border-radius: 0 @m-table-radius 0 0;
+      border-right: none;
+    }
+  }
+}
+.m-table__body, tbody {
+  display: table-row-group;
+  .m-table__row, tr {
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+  .m-table__cell, td {
+    padding: @m-table-body-padding;
+    vertical-align: middle;
+    text-align: inherit;
+    font-weight: inherit;
+    border-bottom: @m-table-cell-border;
+    border-right: @m-table-cell-border;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+.m-table__footer, tfoot {
+  display: table-footer-group;
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/module/m-table.overrides";

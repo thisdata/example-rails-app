@@ -2,10 +2,11 @@
 # might.
 class User
 
-  attr_accessor :id, :name, :email, :mobile
+  attr_accessor :id, :name, :email, :mobile, :balance
 
   def initialize(**args)
     args.each { |key, value| send "#{key}=", value }
+    set_default_id_from_email
   end
 
   def display_name
@@ -14,9 +15,13 @@ class User
 
   def as_json(**args)
     json = super(args)
-    # Use the email address as the ID of this fake user
-    json[:id] ||= Digest::MD5.hexdigest(email)
     json
   end
+
+  private
+    def set_default_id_from_email
+      # Use the email address as the ID of this fake user
+      self.id ||= Digest::MD5.hexdigest(email)
+    end
 
 end

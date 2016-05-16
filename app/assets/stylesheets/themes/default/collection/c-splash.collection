@@ -1,0 +1,10 @@
+.c-splash {
+  .u-align-center;
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.c-splash__content {
+  display: table-cell;
+  vertical-align: middle;
+}

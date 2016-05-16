@@ -1,0 +1,19 @@
+// Line Single
+// ============================================================
+
+@s-line-width: 1px;
+@s-line-color: #e1e1e1;
+
+
+.s-line {
+  display: block;
+  width: 100%;
+  height: @s-line-width;
+  background-color: @s-line-color;
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/single/s-line.overrides";

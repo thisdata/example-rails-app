@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Adds thisdata_track as an instance method. It can hook in to requests
   # and track events
   include ThisData::TrackRequest
+  add_flash_types :error
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -15,9 +16,20 @@ class ApplicationController < ActionController::Base
     User.new(
       email:  session["user"]["email"],
       name:   session["user"]["name"],
-      mobile: session["user"]["mobile"]
+      mobile: session["user"]["mobile"],
+      balance: session["user"]["balance"]
     )
   end
   helper_method :current_user
+
+  def current_ip
+    session["current_ip"] || request.remote_ip
+  end
+  helper_method :current_ip
+
+  def current_user_agent
+    session["current_user_agent"] || request.user_agent
+  end
+  helper_method :current_user_agent
 
 end

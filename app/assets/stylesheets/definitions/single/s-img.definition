@@ -1,0 +1,27 @@
+// Image Format
+// ============================================================
+
+@s-img-radius: 10px;
+
+
+.s-img {
+  display: block;
+  &.-inline {
+    display: inline-block;
+  }
+  &.-fluid {
+    width: 100%;
+  }
+  &.-radius {
+    border-radius: @s-img-radius;
+  }
+  &.-round {
+    border-radius: 50%;
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/single/s-img.overrides";

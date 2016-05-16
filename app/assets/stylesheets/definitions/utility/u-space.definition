@@ -1,0 +1,234 @@
+// Space Utility
+// ============================================================
+
+@u-space-smallest: @vr-1;
+@u-space-smaller: @vr0;
+@u-space-small: @vr0+@vr-1;
+@u-space-medium: @vr1;
+@u-space-large: @vr1+@vr-1;
+@u-space-larger: @vr2;
+@u-space-largest: @vr2+@vr-1;
+
+
+// Space After
+// ------------------------------
+// Margin after element
+
+.u-space-after-smallest {
+  margin-bottom: @u-space-smallest !important;
+}
+.u-space-after-smaller {
+  margin-bottom: @u-space-smaller !important;
+}
+.u-space-after-small {
+  margin-bottom: @u-space-small !important;
+}
+.u-space-after-medium {
+  margin-bottom: @u-space-medium !important;
+}
+.u-space-after-large {
+  margin-bottom: @u-space-large !important;
+}
+.u-space-after-larger {
+  margin-bottom: @u-space-larger !important;
+}
+.u-space-after-largest {
+  margin-bottom: @u-space-largest !important;
+}
+
+@media @mobile {
+  .u-space-after-m-smallest {
+    margin-bottom: @u-space-smallest !important;
+  }
+  .u-space-after-m-smaller {
+    margin-bottom: @u-space-smaller !important;
+  }
+  .u-space-after-m-small {
+    margin-bottom: @u-space-small !important;
+  }
+  .u-space-after-m-medium {
+    margin-bottom: @u-space-medium !important;
+  }
+  .u-space-after-m-large {
+    margin-bottom: @u-space-large !important;
+  }
+  .u-space-after-m-larger {
+    margin-bottom: @u-space-larger !important;
+  }
+  .u-space-after-m-largest {
+    margin-bottom: @u-space-largest !important;
+  }
+}
+@media @tablet {
+  .u-space-after-t-smallest {
+    margin-bottom: @u-space-smallest !important;
+  }
+  .u-space-after-t-smaller {
+    margin-bottom: @u-space-smaller !important;
+  }
+  .u-space-after-t-small {
+    margin-bottom: @u-space-small !important;
+  }
+  .u-space-after-t-medium {
+    margin-bottom: @u-space-medium !important;
+  }
+  .u-space-after-t-large {
+    margin-bottom: @u-space-large !important;
+  }
+  .u-space-after-t-larger {
+    margin-bottom: @u-space-larger !important;
+  }
+  .u-space-after-t-largest {
+    margin-bottom: @u-space-largest !important;
+  }
+}
+@media @desktop {
+  .u-space-after-d-smallest {
+    margin-bottom: @u-space-smallest !important;
+  }
+  .u-space-after-d-smaller {
+    margin-bottom: @u-space-smaller !important;
+  }
+  .u-space-after-d-small {
+    margin-bottom: @u-space-small !important;
+  }
+  .u-space-after-d-medium {
+    margin-bottom: @u-space-medium !important;
+  }
+  .u-space-after-d-large {
+    margin-bottom: @u-space-large !important;
+  }
+  .u-space-after-d-larger {
+    margin-bottom: @u-space-larger !important;
+  }
+  .u-space-after-d-largest {
+    margin-bottom: @u-space-largest !important;
+  }
+}
+
+
+// Space Out Child
+// ------------------------------
+// Spaces out child elements vertically
+
+.u-space-child-smallest > * + * {
+  margin-top: @u-space-smallest !important;
+}
+
+.u-space-child-smaller > * + * {
+  margin-top: @u-space-smaller !important;
+}
+
+.u-space-child-small > * + * {
+  margin-top: @u-space-small !important;
+}
+
+.u-space-child-medium > * + * {
+  margin-top: @u-space-medium !important;
+}
+
+.u-space-child-large > * + * {
+  margin-top: @u-space-large !important;
+}
+
+.u-space-child-larger > * + * {
+  margin-top: @u-space-larger !important;
+}
+
+.u-space-child-largest > * + * {
+  margin-top: @u-space-largest !important;
+}
+
+@media @mobile {
+  .u-space-child-m-smallest > * + * {
+    margin-top: @u-space-smallest !important;
+  }
+
+  .u-space-child-m-smaller > * + * {
+    margin-top: @u-space-smaller !important;
+  }
+
+  .u-space-child-m-small > * + * {
+    margin-top: @u-space-small !important;
+  }
+
+  .u-space-child-m-medium > * + * {
+    margin-top: @u-space-medium !important;
+  }
+
+  .u-space-child-m-large > * + * {
+    margin-top: @u-space-large !important;
+  }
+
+  .u-space-child-m-larger > * + * {
+    margin-top: @u-space-larger !important;
+  }
+
+  .u-space-child-m-largest > * + * {
+    margin-top: @u-space-largest !important;
+  }
+}
+@media @tablet {
+  .u-space-child-t-smallest > * + * {
+    margin-top: @u-space-smallest !important;
+  }
+
+  .u-space-child-t-smaller > * + * {
+    margin-top: @u-space-smaller !important;
+  }
+
+  .u-space-child-t-small > * + * {
+    margin-top: @u-space-small !important;
+  }
+
+  .u-space-child-t-medium > * + * {
+    margin-top: @u-space-medium !important;
+  }
+
+  .u-space-child-t-large > * + * {
+    margin-top: @u-space-large !important;
+  }
+
+  .u-space-child-t-larger > * + * {
+    margin-top: @u-space-larger !important;
+  }
+
+  .u-space-child-t-largest > * + * {
+    margin-top: @u-space-largest !important;
+  }
+}
+@media @desktop {
+  .u-space-child-d-smallest > * + * {
+    margin-top: @u-space-smallest !important;
+  }
+
+  .u-space-child-d-smaller > * + * {
+    margin-top: @u-space-smaller !important;
+  }
+
+  .u-space-child-d-small > * + * {
+    margin-top: @u-space-small !important;
+  }
+
+  .u-space-child-d-medium > * + * {
+    margin-top: @u-space-medium !important;
+  }
+
+  .u-space-child-d-large > * + * {
+    margin-top: @u-space-large !important;
+  }
+
+  .u-space-child-d-larger > * + * {
+    margin-top: @u-space-larger !important;
+  }
+
+  .u-space-child-d-largest > * + * {
+    margin-top: @u-space-largest !important;
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/utility/u-space.overrides";

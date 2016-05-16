@@ -1,0 +1,51 @@
+// Align Utility
+// ============================================================
+
+.u-align-center {
+  text-align: center !important;
+}
+.u-align-left {
+  text-align: left !important;
+}
+.u-align-right{
+  text-align: right !important;
+}
+@media @mobile {
+	.u-align-m-center {
+	  text-align: center !important;
+	}
+	.u-align-m-left {
+	  text-align: left !important;
+	}
+	.u-align-m-right {
+	  text-align: right !important;
+	}
+}
+@media @tablet {
+  .u-align-t-center {
+    text-align: center !important;
+  }
+  .u-align-t-left {
+    text-align: left !important;
+  }
+  .u-align-t-right {
+    text-align: right !important;
+  }
+}
+@media @desktop {
+  .u-align-d-center {
+    text-align: center !important;
+  }
+  .u-align-d-left {
+    text-align: left !important;
+  }
+  .u-align-d-right {
+    text-align: right !important;
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/utility/u-align.overrides";

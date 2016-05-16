@@ -5,13 +5,21 @@ class HomeController < ApplicationController
 
   def track
     # "Log the user in" (a.k.a. save the user details to the session)
-    session["user"] = user_params
+    session["user"] = event_params["user"]
+    session["user"]["balance"] = 10_000
 
-    # The magic!
-    thisdata_track
+    # Allow overriding of ip and user_agent
+    session["current_ip"]         = event_params["ip"]          || request.remote_ip
+    session["current_user_agent"] = event_params["user_agent"]  || request.user_agent
 
-    redirect_to root_path, notice: "Tracked #{current_user.display_name}"
-    session["user"] = nil
+    # Track the event
+    ThisData.track_login(
+      ip: current_ip,
+      user_agent: current_user_agent,
+      user: current_user.as_json
+    )
+
+    redirect_to account_path, notice: "Welcome #{current_user.display_name}!"
   end
 
   def advanced
@@ -27,6 +35,11 @@ class HomeController < ApplicationController
     # Persist the event to the session, so we can repopulate the fields
     session[:event] = event.as_json
     redirect_to advanced_path, notice: "Tracked #{saved_event.user.display_name} #{event.verb}"
+  end
+
+  def logout
+    session["user"] = nil
+    redirect_to root_path, notice: "Good bye. Come back soon!"
   end
 
   private

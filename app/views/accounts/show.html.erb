@@ -1,0 +1,58 @@
+<section class="c-demo -account">
+  <aside class="c-demo-sidebar">
+    <article class="c-demo-sidebar__header">
+      <ul class="m-media -middle -fluid">
+        <li class="m-media__fig"><%= image_tag "thisdata-white.png", class: "c-demo-sidebar__logo" %></li>
+        <li class="m-media__body"><h6 class="s-head -raw -semibold">PRODUCT DEMO</h6></li>
+      </ul>
+    </article>
+    <article class="c-demo-sidebar__step">
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">1. Transfer Funds</h6>
+      <p>Transfer some money. In the background, we'll check out whether your behaviour is risky enough or not to complete the payment.</p>
+    </article>
+    <article class="c-demo-sidebar__step">
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">2. Repeat Process</h6>
+      <p>Try again, from that different location, or Tor. We will detect the anomaly and stop the transfer from taking place.</p>
+    </article>
+  </aside>
+  <div class="c-demo-frame -account">
+    <header class="c-demo-header">
+      <div class="c-demo-header__logo-container">
+        <%= image_tag "logo-white.png", class: "c-demo-header__logo" %>
+      </div>
+      <span class="c-demo-header__balance">
+        <b>Current balance:</b> <%= number_to_currency current_user.balance %>
+      </span>
+      <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""}, class: "c-demo-header__sign-out" %>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="notice">
+        <h4 class="s-head -light -raw"><%= flash[:notice] %></h4>
+      </div>
+    <% end %>
+    <% if flash[:error] %>
+      <% flash[:error] = [flash[:error]] unless flash[:error].is_a?(Array) %>
+      <% flash[:error].each do |message| %>
+        <div class="error">
+          <h4 class="s-head -light -raw"><%= message %></h4>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="c-demo-content">
+      <h2 class="s-head -light -wide">How much would you like to transfer?</h2>
+      <article class="c-demo-form">
+        <h4 class="s-head -light -tight"><b>Payee:</b> John Titor</h4>
+        <h5 class="s-head -light -narrow">06-0821-0373779-00</h5>
+        <span class="c-demo-form__fake-input">
+          <%= number_to_currency current_user.balance %>
+        </span>
+        <%= link_to "Transfer Funds", accounts_transfer_path, method: :post, class: "s-button -fluid -green" %>
+      </article>
+    </div>
+
+
+  </div>
+</section>
+

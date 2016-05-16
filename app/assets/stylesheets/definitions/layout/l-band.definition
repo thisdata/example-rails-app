@@ -1,0 +1,52 @@
+// Bands Layout 1.0
+// ============================================================
+
+// Color
+@l-band-light-grey: #F3F3F3;
+@l-band-grey: #EAEAEA;
+@l-band-dark-grey: #D8D8D8;
+
+// Border
+@l-band-border: 1px solid #e1e1e1;
+
+
+.l-band {
+
+  position: relative;
+  clear: both;
+  width: 100%;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  // Background
+  // ------------------------------
+
+  &.-white {
+    background: white;
+  }
+  &.-light-grey {
+    background: @l-band-light-grey;
+  }
+  &.-grey {
+    background: @l-band-grey;
+  }
+  &.-dark-grey {
+    background: @l-band-dark-grey;
+  }
+
+  // Border
+  // ------------------------------
+
+  &.-lined {
+    border-bottom: @l-band-border;
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/layout/l-band.overrides";

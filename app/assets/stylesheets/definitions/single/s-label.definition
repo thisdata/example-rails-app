@@ -1,0 +1,182 @@
+// Label Format
+// ============================================================
+
+// Label Default Tag Font Size
+@s-label-tag-size: @ms-1;
+@s-label-hole-size: 4px;
+
+// Label Tag Sizes
+@s-label-tag-smallest: @ms-1;
+@s-label-tag-smaller: @ms0;
+@s-label-tag-small: @ms1;
+@s-label-tag-medium: @ms2;
+@s-label-tag-large: @ms3;
+@s-label-tag-larger: @ms4;
+@s-label-tag-largest: @ms5;
+
+// Color Variables
+@s-label-color-default: @brand-color;
+@s-label-color-red: @red;
+@s-label-color-orange: @orange;
+@s-label-color-yellow: @yellow;
+@s-label-color-green: @green;
+@s-label-color-blue: @blue;
+@s-label-color-purple: @purple;
+@s-label-color-black: @black;
+
+
+.s-label {
+
+  &.-tag {
+    display: inline-block;
+    position: relative;
+    margin-left: 1em;
+    padding: .5em;
+    font-size: @s-label-tag-size;
+    font-weight: 500;
+    line-height: 1;
+    color: white;
+    margin-right: .5rem;
+    background-color: @s-label-color-default;
+    &:before {
+      position: absolute;
+      pointer-events: none;
+      right: 100%;
+      top: 50%;
+      content: " ";
+      height: 0;
+      width: 0;
+      border: solid transparent;
+      border-color: rgba(255, 255, 255, 0);
+      border-right-color: @s-label-color-default;
+      border-width: 1em;
+      margin-top: -1em;
+    }
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: -@s-label-hole-size;
+      content: " ";
+      width: @s-label-hole-size;
+      height: @s-label-hole-size;
+      margin-top: -@s-label-hole-size/2;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    // Sizes
+    &.-smallest {
+      font-size: @s-label-tag-smallest;
+      &:after {
+        left: -@s-label-hole-size;
+        width: @s-label-hole-size;
+        height: @s-label-hole-size;
+        margin-top: -@s-label-hole-size/2;
+      }
+    }
+    &.-smaller {
+      font-size: @s-label-tag-smaller;
+      &:after {
+        left: -@s-label-hole-size;
+        width: @s-label-hole-size + 1;
+        height: @s-label-hole-size + 1;
+        margin-top: -(@s-label-hole-size + 1) /2;
+      }
+    }
+    &.-small {
+      font-size: @s-label-tag-small;
+      &:after {
+        left: -@s-label-hole-size - 2;
+        width: @s-label-hole-size + 2;
+        height: @s-label-hole-size + 2;
+        margin-top: -(@s-label-hole-size + 2) /2;
+      }
+    }
+    &.-medium {
+      font-size: @s-label-tag-medium;
+      &:after {
+        left: -@s-label-hole-size - 3;
+        width: @s-label-hole-size + 3;
+        height: @s-label-hole-size + 3;
+        margin-top: -(@s-label-hole-size + 3) /2;
+      }
+    }
+    &.-large {
+      font-size: @s-label-tag-large;
+      &:after {
+        left: -@s-label-hole-size - 4;
+        width: @s-label-hole-size + 4;
+        height: @s-label-hole-size + 4;
+        margin-top: -(@s-label-hole-size + 4) /2;
+      }
+    }
+    &.-larger {
+      font-size: @s-label-tag-larger;
+      &:after {
+        left: -@s-label-hole-size - 5;
+        width: @s-label-hole-size + 5;
+        height: @s-label-hole-size + 5;
+        margin-top: -(@s-label-hole-size + 5) /2;
+      }
+    }
+    &.-largest {
+      font-size: @s-label-tag-largest;
+      &:after {
+        left: -@s-label-hole-size - 6;
+        width: @s-label-hole-size + 6;
+        height: @s-label-hole-size + 6;
+        margin-top: -(@s-label-hole-size + 6) /2;
+      }
+    }
+
+    // Colors
+    &.-red {
+      background-color: @s-label-color-red;
+      &:before {
+        border-right-color: @s-label-color-red;
+      }
+    }
+    &.-orange {
+      background-color: @s-label-color-orange;
+      &:before {
+        border-right-color: @s-label-color-orange;
+      }
+    }
+    &.-yellow {
+      background-color: @s-label-color-yellow;
+      &:before {
+        border-right-color: @s-label-color-yellow;
+      }
+    }
+    &.-green {
+      background-color: @s-label-color-green;
+      &:before {
+        border-right-color: @s-label-color-green;
+      }
+    }
+    &.-blue {
+      background-color: @s-label-color-blue;
+      &:before {
+        border-right-color: @s-label-color-blue;
+      }
+    }
+    &.-purple {
+      background-color: @s-label-color-purple;
+      &:before {
+        border-right-color: @s-label-color-purple;
+      }
+    }
+    &.-black {
+      background-color: @s-label-color-black;
+      &:before {
+        border-right-color: @s-label-color-black;
+      }
+    }
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/single/s-label.overrides";

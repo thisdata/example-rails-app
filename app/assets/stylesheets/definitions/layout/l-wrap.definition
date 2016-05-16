@@ -1,0 +1,30 @@
+// Wrap Layout
+// ============================================================
+
+@l-wrap-max-width: 1124px;
+
+
+.l-wrap {
+
+  position: relative;
+  width: 100%;
+  max-width: @l-wrap-max-width;
+  margin: auto;
+  padding-right: @vr0;
+  padding-left: @vr0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media @mobile {
+    padding-right: @vr-1;
+    padding-left: @vr-1;
+  }
+}
+
+
+// Load Theme Overrides
+// ============================================================
+
+@import "themes/@{themes-folder}/layout/l-wrap.overrides";
