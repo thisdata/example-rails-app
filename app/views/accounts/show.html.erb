@@ -17,7 +17,9 @@
   </aside>
   <div class="c-demo-frame -account">
     <header class="c-demo-header">
-      <%= image_tag "logo-white.png", class: "c-demo-header__logo" %>
+      <div class="c-demo-header__logo-container">
+        <%= image_tag "logo-white.png", class: "c-demo-header__logo" %>
+      </div>
       <span class="c-demo-header__balance">
         <b>Current balance:</b> <%= number_to_currency current_user.balance %>
       </span>

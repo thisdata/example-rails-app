@@ -41,7 +41,7 @@
 
 .c-demo-frame {
   position: relative;
-  width: 100%;
+  flex: 1;
   border-top: 5px solid #4FDCE2;
   &.-account {
     border-top: 0;
@@ -49,25 +49,35 @@
 }
 
 .c-demo-header {
-  display: flex;
+  display: table;
   height: 60px;
+  width: 100%;
   padding: 0 @vr0;
   background-color: #4fDCE2;
   color: white;
   justify-content: center;
   align-items: center;
+  &__logo-container {
+    display: table-cell;
+    vertical-align: middle;
+    width: 25%;
+  }
   &__logo {
     width: 140px;
   }
   &__balance {
+    display: table-cell;
+    vertical-align: middle;
       flex: 1;
       text-align: center;
       font-size: 1.8rem;
       font-weight: 300;
   }
   &__sign-out {
+    display: table-cell;
+    vertical-align: middle;
     text-align: right;
-    width: 140px;
+    width: 25%;
     color: white;
     &:hover {
       color: white;
@@ -121,7 +131,7 @@
   display: flex;
   width: 100%;
   min-height: 40px;
-  padding: 5px 20px;
+  padding: 10px 20px;
   justify-content: center;
   align-items: center;
   background:  #F0F4F7;
@@ -129,7 +139,7 @@
   text-align: center;
 }
 .notice {
-  background-color: #3DFA89;
+  background-color: #42CA29;
 }
 .error {
   background-color: #FF6742;
