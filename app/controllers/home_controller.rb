@@ -5,11 +5,19 @@ class HomeController < ApplicationController
 
   def track
     # "Log the user in" (a.k.a. save the user details to the session)
-    session["user"] = user_params
+    session["user"] = event_params["user"]
     session["user"]["balance"] = 10_000
 
-    # The magic!
-    thisdata_track
+    # Allow overriding of ip and user_agent
+    session["ip"] = event_params["ip"] || request.remote_ip
+    session["user_agent"] = event_params["user_agent"] || request.user_agent
+
+    # Track the event
+    track_login(
+      ip: current_ip,
+      user_agent: current_user_agent,
+      user: current_user.to_json
+    )
 
     redirect_to account_path, notice: "Welcome #{current_user.display_name}!"
   end
