@@ -9,6 +9,10 @@
 
 <%= form_tag("/advanced_track", method: "post") do %>
   <div class="field">
+    <%= label_tag(:event_verb, "Verb*") %>
+    <%= text_field_tag('event[verb]', @event.verb, required: true, autofocus: true) %>
+  </div>
+  <div class="field">
     <%= label_tag(:event_ip, "IP Address*") %>
     <%= text_field_tag('event[ip]', @event.ip, required: true, autofocus: true) %>
   </div>

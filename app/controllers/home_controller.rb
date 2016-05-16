@@ -6,12 +6,12 @@ class HomeController < ApplicationController
   def track
     # "Log the user in" (a.k.a. save the user details to the session)
     session["user"] = user_params
+    session["user"]["balance"] = 10_000
 
     # The magic!
     thisdata_track
 
-    redirect_to root_path, notice: "Tracked #{current_user.display_name}"
-    session["user"] = nil
+    redirect_to account_path, notice: "Welcome #{current_user.display_name}!"
   end
 
   def advanced
@@ -26,7 +26,12 @@ class HomeController < ApplicationController
 
     # Persist the event to the session, so we can repopulate the fields
     session[:event] = event.as_json
-    redirect_to advanced_path, notice: "Tracked #{saved_event.user.display_name}"
+    redirect_to advanced_path, notice: "Tracked #{saved_event.user.display_name} #{event.verb}"
+  end
+
+  def logout
+    session["user"] = nil
+    redirect_to root_path, notice: "Good bye. Come back soon!"
   end
 
   private
@@ -37,6 +42,7 @@ class HomeController < ApplicationController
 
     def event_params
       params.require(:event).permit(
+        :verb,
         :ip,
         :user_agent,
         user: [
