@@ -8,21 +8,25 @@
     </article>
     <article class="c-demo-sidebar__step">
       <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">1. Log in to Ablemoney</h6>
-      <p>Log in using your email address and any random, fake password.</p>
-      <p>Hint, if you use Google Apps, you can create new email addresses on the fly with the + symbol:<br />
-        you@example.com, you+test2@example.com, you+foobar@example.com, etc...</p>
+      <p>Log in using your email address and any random fake password.</p>
     </article>
     <article class="c-demo-sidebar__step">
-      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">2. Log in Again</h6>
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">2. Select login characteristic</h6>
       <p>
-        Open a new browser.
-        Log in again with the same email address, but pretending to be from a different country or location.
-        Then you'll look suspicious!
+        This characteristic becomes part of your user login profile.
+      </p>
+
+      <p class="u-color-blue">
+        <strong><em>
+          If this is your second login, choose a different login characteristic
+          to create a behaviorial anomaly.
+        </em></strong>
       </p>
     </article>
-    <article class="c-demo-sidebar__step">
-      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">3. Check your Email</h6>
-      <p>If an anomaly has been detected we will let you know.</p>
+    <article class="c-demo-sidebar__step -bottom">
+      <p>
+        <a href="https://thisdata.com" class="s-button -green -fluid -sharp">Sign up to <strong>ThisData</strong> for free</a>
+      </p>
     </article>
   </aside>
   <div class="c-demo-frame">
@@ -41,9 +45,9 @@
           <div class="l-box -row">
             <%= select_tag('event[ip]',
               options_for_select([
-                ["Pretend to be from New Zealand",  "130.216.39.241"],
-                ["Pretend to be from Australia",    "128.250.51.47"],
-                ["Pretend to be using Tor",         "197.231.221.211"]
+                ["Pretend to be from New Zealand (Low Risk)",  "130.216.39.241"],
+                ["Pretend to be from Australia (Low Risk)", "128.250.51.47"],
+                ["Pretend to be using Tor (High Risk)",        "197.231.221.211"]
               ]),
               required: true, autofocus: true, placeholder: "Email",
               class: "js-nice-select nice-select"

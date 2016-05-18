@@ -7,12 +7,17 @@
       </ul>
     </article>
     <article class="c-demo-sidebar__step">
-      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">1. Transfer Funds</h6>
-      <p>Transfer some money. In the background, we'll check out whether your behaviour is risky enough or not to complete the payment.</p>
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">1. Transfer the money</h6>
+      <p>Click the green button to transfer funds. If you are an authenticated user you can transfer the money.</p>
     </article>
     <article class="c-demo-sidebar__step">
-      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">2. Repeat Process</h6>
-      <p>Try again, from that different location, or Tor. We will detect the anomaly and stop the transfer from taking place.</p>
+      <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">2. Log Out and Log in again</h6>
+      <p>Now log out and log in using Tor. Try to transfer money again.</p>
+    </article>
+    <article class="c-demo-sidebar__step -bottom">
+      <p>
+        <a href="https://thisdata.com" class="s-button -green -fluid -sharp">Sign up to <strong>ThisData</strong> for free</a>
+      </p>
     </article>
   </aside>
   <div class="c-demo-frame -account">
@@ -23,7 +28,9 @@
       <span class="c-demo-header__balance">
         <b>Current balance:</b> <%= number_to_currency current_user.balance %>
       </span>
-      <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""}, class: "c-demo-header__sign-out" %>
+      <span class="c-demo-header__sign-out">
+        <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""} %>
+      </span>
     </header>
 
     <% if flash[:notice] %>
