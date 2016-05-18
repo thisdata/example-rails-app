@@ -80,13 +80,20 @@
       font-weight: 300;
   }
   &__sign-out {
-    display: table-cell;
-    vertical-align: middle;
+    font-weight: bold;
     text-align: right;
     width: 25%;
-    color: white;
-    &:hover {
+    a {
+      padding: 0 25px;
+      background-color: rgba(255,255,255,0.4);
       color: white;
+      height: 60px;
+      display: inline-block;
+      line-height: 60px;
+      float: right;
+      &:hover{
+        background-color: #4fDCE2;
+      }
     }
   }
 }

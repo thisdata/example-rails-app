@@ -28,7 +28,9 @@
       <span class="c-demo-header__balance">
         <b>Current balance:</b> <%= number_to_currency current_user.balance %>
       </span>
-      <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""}, class: "c-demo-header__sign-out" %>
+      <span class="c-demo-header__sign-out">
+        <%= link_to "Log Out", logout_path, method: :delete, data: {no_turbolink: ""} %>
+      </span>
     </header>
 
     <% if flash[:notice] %>
