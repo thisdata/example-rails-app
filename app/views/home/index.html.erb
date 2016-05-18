@@ -13,10 +13,19 @@
     <article class="c-demo-sidebar__step">
       <h6 class="s-head -narrow -spaced -tight c-demo-sidebar__title">2. Select login characteristic</h6>
       <p>
-        This characteristic becomes part of your user login profile.</p>
+        This characteristic becomes part of your user login profile.
+      </p>
 
       <p class="u-color-blue">
-        <strong><em>If this is your second login choose a different login characteristic to create a behaviorial anomaly.</em></strong>
+        <strong><em>
+          If this is your second login, choose a different login characteristic
+          to create a behaviorial anomaly.
+        </em></strong>
+      </p>
+    </article>
+    <article class="c-demo-sidebar__step -bottom">
+      <p>
+        <a href="https://thisdata.com" class="s-button -green -fluid -sharp">Sign up to <strong>ThisData</strong> for free</a>
       </p>
     </article>
   </aside>
@@ -36,9 +45,9 @@
           <div class="l-box -row">
             <%= select_tag('event[ip]',
               options_for_select([
-                ["Pretend to be from New Zealand",  "130.216.39.241"],
-                ["Pretend to be from Australia",    "128.250.51.47"],
-                ["Pretend to be using Tor",         "197.231.221.211"]
+                ["Pretend to be from New Zealand (Low Risk)",  "130.216.39.241"],
+                ["Pretend to be from Australia (Low Risk)", "128.250.51.47"],
+                ["Pretend to be using Tor (High Risk)",        "197.231.221.211"]
               ]),
               required: true, autofocus: true, placeholder: "Email",
               class: "js-nice-select nice-select"

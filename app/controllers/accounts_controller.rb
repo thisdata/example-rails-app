@@ -11,9 +11,10 @@ class AccountsController < ApplicationController
       redirect_to account_path, notice: "Your transfer was successful!"
       session["user"]["balance"] = 0
     else
+      triggers = score.try(:triggers) || []
       flash[:error] = [
         "Sorry! This transfer has been blocked. User identity cannot be authenticated.",
-        *score.triggers
+        *triggers
       ]
       redirect_to account_path
     end
